@@ -1,0 +1,9 @@
+configs={}
+configs['edge']=10   #used when cropping frames based on the locations of each joint
+configs['dir_penn_action']='../../pennAction'
+configs['dir_potion']='../../potion'
+configs['num_joints']={}
+configs['num_joints']['gt']=13
+configs['num_joints']['pred']=16
+configs['C']=3
+configs['frame_size']=32

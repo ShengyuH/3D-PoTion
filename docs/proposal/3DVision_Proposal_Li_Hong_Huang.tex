@@ -1,0 +1,59 @@
+% ETH Zurich  - 3D Photography 2015
+% http://www.cvg.ethz.ch/teaching/3dphoto/
+% Template for project proposals
+
+\documentclass[11pt,a4paper,oneside,onecolumn]{IEEEtran}
+\usepackage{graphicx}
+% Enter the project title and your project supervisor here
+\newcommand{\ProjectTitle}{3D Pose Motion Representation for Action Recognition}
+\newcommand{\ProjectSupervisor}{Bugra Tekin, Federica Bogo, Taein Kwon}
+\newcommand{\DateOfReport}{March 9, 2018}
+
+% Enter the team members' names and path to their photos. Comment / uncomment related definitions if the number of members are different than 2.
+% Including photographs are optional. Photos are there to help us to evaluate your group more effectively. If you wish not to include your photos, please comment the following line.
+\newcommand{\PutPhotos}{}
+% Please include a clear photo of each member. (use pdf or png files for Latex to embed them in the document well)
+\newcommand{\memberone}{Jingtong Li}
+\newcommand{\memberonepicture}{Jingtong.jpeg}
+\newcommand{\membertwo}{Ye Hong}
+\newcommand{\membertwopicture}{ye.jpeg}
+\newcommand{\memberthree}{Shengyu Huang}
+\newcommand{\memberthreepicture}{shengyu.jpg}
+
+
+%%%% DO NOT EDIT THE PART BELOW %%%%
+\title{\ProjectTitle}
+\author{3D Vision Project Proposal\\Supervised by: \ProjectSupervisor\\ \DateOfReport}
+\begin{document}
+\maketitle
+\vspace{-1.5cm}\section*{Group Members}\vspace{0.3cm}
+\begin{center}\begin{minipage}{\linewidth}\begin{center}
+\begin{minipage}{3 cm}\begin{center}\memberone\ifdefined\PutPhotos\\\vspace{0.2cm}\includegraphics[height=3cm]{\memberonepicture}\fi\end{center}\end{minipage}
+\ifdefined\membertwo\begin{minipage}{3 cm}\begin{center}\membertwo\ifdefined\PutPhotos\\\vspace{0.2cm}\includegraphics[height=3cm]{\membertwopicture}\fi\end{center}\end{minipage}\fi
+\ifdefined\memberthree\begin{minipage}{3 cm}\begin{center}\memberthree\ifdefined\PutPhotos\\\vspace{0.2cm}\includegraphics[height=3cm]{\memberthreepicture}\fi\end{center}\end{minipage}\fi
+\ifdefined\memberfour\begin{minipage}{3 cm}\begin{center}\memberfour\ifdefined\PutPhotos\\\vspace{0.2cm}\includegraphics[height=3cm]{\memberfourpicture}\fi\end{center}\end{minipage}\fi
+\ifdefined\memberfive\begin{minipage}{3 cm}\begin{center}\memberfive\ifdefined\PutPhotos\\\vspace{0.2cm}\includegraphics[height=3cm]{\memberfivepicture}\fi\end{center}\end{minipage}\fi
+\end{center}\end{minipage}\end{center}\vspace{0.3cm}
+%%%% END OF PROTECTED LINES %%%%
+
+
+%%%% BEGIN WRITING THE DOCUMENT HERE %%%%
+
+\section{Description of the project}
+
+Action recognition is one of the most fundamental problems of computer vision. Human pose features provide valuable cues for recognizing human actions. To this end, \cite{PoTion} recently proposed an efficient motion descriptor based on 2D pose features. However, this lacks depth information which is crucial for recognizing fine-grained actions. The objective of this project is extending aforementioned work to 3D pose feature space \cite{pavlakos17volumetric} and evaluating our method on Penn Action Dataset \cite{MengLong13PennAction}.
+
+\section{Work packages and timeline}
+
+Our project is pretty straightforward. Firstly, we will train a model on several public pose action datasets to extract 3D heatmaps for the human joints \cite{pavlakos17volumetric} for each frame, and then finetune the model to adapt to Penn Action Dataset. Secondly, we will obtain our 3D PoTion representation by temporally aggregating the dense 3D heatmaps of the human joints. This is achieved by 'colorizing' each of them depending on the relative time of the frames in the video clip and summing them. Thirdly, the fixed-sized 3D PoTion representations for each video clip are going to be trained to recognize human actions using different neural network architectures and compared against the state-of-the-art.\par The training codes from \cite{pavlakos17volumetric} are open-source and the second step is trivial. \cite{PoTion} achieved state-of-the-art classification results based on 2D PoTion using a shallow 2D CNN, we are also expected to achive acceptable classification results based on 3D PoTion using a shallow 3D CNN. \par We plan to finish implementing and evaluating the whole pipeline by \textbf{middle April} and add some modifications to the model according to the results afterward. We three would work together at the beginning and may work separately when we are all clear about the whole task. Python will be selected as the programming language and PyTorch as the Deep Learning framework. The final model shall run only on PC/Mac/Desktop.  
+
+\section{Outcomes and Demonstration}
+
+The expected classification results should be at least as good as that of \cite{PoTion} since our pose descriptor is encoded with more information. We plan to give an offline demo of our model at the end of the semester, presenting the obtained 3D PoTion descriptor, the chosen neural network architecture as well as the classification results on several datasets compared against the state-of-the-art. Several characteristic misclassified samples shall also be presented to identify the shortcomings of our method.
+
+{%\singlespace
+{\small
+\bibliography{refs}
+\bibliographystyle{plain}}}
+
+\end{document}

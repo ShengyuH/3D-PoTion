@@ -1,0 +1,5 @@
+pennAction/*
+potion/*
+tmp/
+*.hdf5
+*.events
