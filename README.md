@@ -9,19 +9,6 @@ Supervisors: Bugra Tekin, Federica Bogo, Taein Kwon
 ## Document
 The folder ``docs`` contains all the documents throughout the whole semester. ``Final_Report.pdf`` is our final submitted report. There are some visualizations in  ``scripts\eval.ipynb``. You may not run it as all data files are ignored.
 
-## Work distribution
-### Shengyu Huang
-- In the coding part, I'm responsible for estimating the 3D poses and then simulating and synthesizing the heatmaps for 2D PoTion and heat-volumes for 3D PoTion. I'm also responsible for experimenting on action recognition task using 3D PoTion and multi-view 2D PoTion representations.
-- In the report part, I'm responsible for the human pose estimation and 3D CNN of the methodology part, and the whole experimental results part.
-
-### Ye Hong
-- In the coding part, I am responsible for the implementation and testing of the colorizing steps of the 2D and 3D PoTion representation. 
-- In the report part,  I am responsible for PoTion representation of the methodology part.
-
-### Jingtong Li
-- In the coding part, I'm responsible for action recognition task using 2D PoTion representations.
-- In the report part, I'm responsible for the introduction and related work part.
-
 ## Experiment
 We only adopt open-sourced codes in pose estimation parts. We implement all other parts from scratch. 
 
